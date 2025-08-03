@@ -101,6 +101,18 @@ header {
     border-bottom: 1px solid rgba(0, 245, 212, 0.2);
 }
 
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: var(--electric-blue);
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1001;
+}
+
 .logo {
     font-size: 2.5rem;
     font-weight: 700;
@@ -220,17 +232,6 @@ header {
 .btn-primary:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 15px 40px rgba(0, 245, 212, 0.5);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--electric-blue);
-    border: 2px solid var(--electric-blue);
-}
-
-.btn-secondary:hover {
-    background: rgba(0, 245, 212, 0.1);
-    transform: translateY(-5px);
 }
 
 .hero-image {
@@ -749,6 +750,88 @@ footer {
     opacity: 0.7;
 }
 
+/* floating contact */
+ .floating-contacts {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.contact-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+.whatsapp { background: #25D366; }
+.whatsapp:hover {
+    background-color: #25D366;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(37, 211, 102, 0.3);
+}
+.instagram { 
+    background: #f09433; 
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+}
+.instagram:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(188, 24, 136, 0.3);
+}
+.email { background: #D44638; }
+.email:hover {
+    background: #D44638;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 16px rgba(212, 70, 56, 0.3);
+}
+ .contact-icon:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    animation: pulse 1.5s infinite;
+}
+ @keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.7; }
+    70% { transform: scale(1.3); opacity: 0; }
+    100% { transform: scale(1.3); opacity: 0; }
+}
+.contact-icon img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.contact-icon:hover img {
+    transform: rotate(10deg);
+}
+
 /*  Responsive Design  */
 @media (max-width: 1200px) {
     #hero, #about, #projects, #contact {
@@ -839,5 +922,34 @@ footer {
     
     .section-header h2 {
         font-size: 2rem;
+    }
+}
+@media screen and (max-width: 530px) {
+    .hamburger {
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 250px;
+      background: #333333a1;
+      color: white;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      flex-direction: column;
+      padding: 50px 20px;
+    }
+    .nav-links.open {
+      transform: translateX(0);
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 20px 0;
+      font-size: 18px;
     }
 }

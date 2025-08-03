@@ -23,9 +23,10 @@
 
     <!-- Header -->
     <header>
+        <div class="hamburger">&#9776;</div>
         <div class="logo">ZEUS</div>
         <nav>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -41,8 +42,7 @@
             <h2>Front-End Developer</h2>
             <p>I craft immersive digital experiences with cutting-edge web technologies. Based in Pakistan, I specialize in creating pixel-perfect, responsive websites that captivate users.</p>
             <div class="cta-buttons">
-                <a href="" class="btn btn-primary">Hire Me</a>
-                <a href="CV/My Resume.docx" class="btn btn-secondary">Download CV</a>
+                <a href="#contact" class="btn btn-primary">Hire Me</a>
             </div>
         </div>
         <div class="hero-image">
@@ -246,7 +246,26 @@
         </div>
     </footer>
 
+    <!-- Floating Contact -->
+      <div class="floating-contacts">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/923329333972" target="_blank" class="contact-icon whatsapp">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp">
+        </a>
+        
+        <!-- Instagram -->
+        <a href="https://instagram.com/linux_force" target="_blank" class="contact-icon instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        </a>
+        
+        <!-- Email -->
+        <a href="mailto:fazesaqib2005@gmail.com" class="contact-icon email">
+            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        </a>
+    </div>
+
     <!-- aos script link -->
+     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
